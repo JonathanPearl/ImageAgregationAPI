@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
+      "FlickrNet/3.25.0": {
+        "type": "package",
+        "compile": {
+          "lib/net20/FlickrNet.dll": {}
+        },
+        "runtime": {
+          "lib/net20/FlickrNet.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/1.1.0": {
         "type": "package",
         "compile": {
@@ -29,6 +38,16 @@
     }
   },
   "libraries": {
+    "FlickrNet/3.25.0": {
+      "sha512": "a0nOZNtbnxIzhkKz7UdW03ojJOpi2OCls+84+BRryc+ubWRhBwMclo9n5wBNHgLtSWgaz8/NgBVk/K04FqalOQ==",
+      "type": "package",
+      "path": "flickrnet/3.25.0",
+      "files": [
+        "flickrnet.3.25.0.nupkg.sha512",
+        "flickrnet.nuspec",
+        "lib/net20/FlickrNet.dll"
+      ]
+    },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
@@ -172,6 +191,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "FlickrNet >= 3.25.0",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -182,9 +202,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projects\\ImageAgregationAPI\\ServicesLayer\\ServicesLayer.csproj",
-      "projectName": "ServicesLayer",
-      "projectPath": "E:\\Projects\\ImageAgregationAPI\\ServicesLayer\\ServicesLayer.csproj",
+      "projectUniqueName": "E:\\Projects\\ImageAgregationAPI\\ServicesLayer\\SL.csproj",
+      "projectName": "SL",
+      "projectPath": "E:\\Projects\\ImageAgregationAPI\\ServicesLayer\\SL.csproj",
       "packagesPath": "C:\\Users\\jomob_000\\.nuget\\packages\\",
       "outputPath": "E:\\Projects\\ImageAgregationAPI\\ServicesLayer\\obj\\",
       "projectStyle": "PackageReference",
@@ -216,6 +236,10 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "FlickrNet": {
+            "target": "Package",
+            "version": "[3.25.0, )"
+          },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
@@ -230,5 +254,17 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'FlickrNet 3.25.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "FlickrNet",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }

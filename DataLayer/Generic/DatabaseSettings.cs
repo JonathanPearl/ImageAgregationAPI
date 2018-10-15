@@ -22,13 +22,7 @@ namespace DL.Generic
 
             if (!new FileInfo(path).Exists)
             {
-                var DefaultSettings = new DatabaseSettings();
-                DefaultSettings.DatabaseName = "imagesearch";
-                DefaultSettings.Server = "localhost";
-                DefaultSettings.Port = "3306";
-                DefaultSettings.UserName = "root";
-                DefaultSettings.Password = "admin";
-                DatabaseSettings.SetSettings(DefaultSettings);
+                DefaultSettingsData();
             }
 
             var xmlSerializer = new DataContractSerializer(typeof(DatabaseSettings));
@@ -39,9 +33,26 @@ namespace DL.Generic
             return settings;
         }
 
+        private static void DefaultSettingsData()
+        {
+            var DefaultSettings = new DatabaseSettings();
+            DefaultSettings.DatabaseName = "imagesearch";
+            DefaultSettings.Server = "localhost";
+            DefaultSettings.Port = "3306";
+            DefaultSettings.UserName = "root";
+            DefaultSettings.Password = "admin";
+            DatabaseSettings.SetSettings(DefaultSettings);
+        }
+
+        // Writes Default Settings if not existing
         private static void SetSettings(DatabaseSettings defaultSettings)
         {
-            throw new NotImplementedException();
+            var path = Environment.CurrentDirectory + "DatabaseSettings.xml";
+            var xmlSerializer = new DataContractSerializer(typeof(DatabaseSettings));
+            var settings = new System.Xml.XmlWriterSettings { Indent = true, NewLineOnAttributes = true };
+            var SettingsFile = XmlWriter.Create(path, settings);
+            xmlSerializer.WriteObject(SettingsFile, settings);
+            SettingsFile.Close();
         }
     }
 }
