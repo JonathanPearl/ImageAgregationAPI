@@ -1,0 +1,6 @@
+E:\Projects\ImageAgregationAPI\DataLayer\bin\Debug\netstandard2.0\DL.deps.json
+E:\Projects\ImageAgregationAPI\DataLayer\bin\Debug\netstandard2.0\DL.dll
+E:\Projects\ImageAgregationAPI\DataLayer\obj\Debug\netstandard2.0\DL.csprojAssemblyReference.cache
+E:\Projects\ImageAgregationAPI\DataLayer\obj\Debug\netstandard2.0\DL.csproj.CoreCompileInputs.cache
+E:\Projects\ImageAgregationAPI\DataLayer\obj\Debug\netstandard2.0\DL.AssemblyInfoInputs.cache
+E:\Projects\ImageAgregationAPI\DataLayer\obj\Debug\netstandard2.0\DL.AssemblyInfo.cs
